@@ -1,0 +1,55 @@
+[user]
+    name = Carlos J. Torres
+    email = carlos.torres@blinkfitness.com
+[core]
+    editor = /usr/bin/env nvim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[status]
+    showUntrackedFiles = no
+[color]
+    branch = auto
+    status = auto
+    diff = auto
+    ui = auto
+[apply]
+    whitespace = fix
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+[delta]
+    navigate = true
+    side-by-side = true
+[i18n]
+    filesEncoding = utf-8
+[alias]
+    remotes = remote -v
+    st = status
+    co = checkout
+    a = add --interactive
+    pu = "!f() { git push -u upstream --tag $1; }; f"
+    puf = "!f() { git push -f -u upstream --tag $1; }; f"
+    put = "!f() { git push -u upstream --tag $1; }; f"
+    pom = "!f() { git push -u origin --tag $1; }; f"
+    up = "!f() { git fetch upstream && git merge upstream/$1; }; f"
+    sup = "!f() { git fetch --recurse-submodules upstream && git merge upstream/$1; }; f"
+    op = "!f() { git fetch origin && git merge origin/$1; }; f"
+    sop = "!f() { git fetch --recurse-submodules origin && git merge origin/$1; }; f"
+    do = "!f() { git branch -D $1 && git branch -D -r origin/$1; }; f"
+    du = "!f() { git branch -D $1 && git branch -D -r upstream/$1; }; f"
+    pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+    pur = "!f() { git fetch upstream pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
+    ls = "!f() { git branch -l -r; }; f"
+    lga = "log --graph --oneline --all --decorate"
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
