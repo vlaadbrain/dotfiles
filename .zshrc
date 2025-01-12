@@ -111,7 +111,7 @@ alias ds='du -sk ./* | sort -k1nr  | head -20'
 alias grep='grep -s --color=always'
 alias ldconfig='ldconfig -N'
 # alias ls='ls -ShFG'
-alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --git --icons=always"
 alias darkstar='ssh cjt@darkstar'
 alias arpnet='ssh cjt@174.136.109.82'
 alias aneurism='ssh ctorres@72.69.183.210'
@@ -145,11 +145,11 @@ export GIT_TOKEN=${GITHUB_TOKEN}
 export NPM_TOKEN=${GITHUB_TOKEN}
 
 # If you need to have openjdk@21 first in your PATH, run:
-export JAVA_HOME="/usr/local/opt/openjdk@21"
-export PATH="/usr/local/opt/openjdk@21/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export PATH="${JAVA_HOME}/bin:$PATH"
 
 # For compilers to find openjdk@21 you may need to set:
-export CPPFLAGS="-I/usr/local/opt/openjdk@21/include"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 
 #export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
 #
@@ -245,3 +245,9 @@ eval "$(zoxide init zsh)"
 
 alias cd="z"
 export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/carlos.torres/.dart-cli-completion/zsh-config.zsh ]] && . /Users/carlos.torres/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
