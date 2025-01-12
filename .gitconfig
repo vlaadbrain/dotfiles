@@ -1,6 +1,6 @@
 [user]
     name = Carlos J. Torres
-    email = carlos.torres@blinkfitness.com
+    email = vlaadbrain@gmail.com
 [core]
     editor = /usr/bin/env nvim
     pager = delta
@@ -31,8 +31,8 @@
     a = add --interactive
     pu = "!f() { git push -u upstream --tag $1; }; f"
     puf = "!f() { git push -f -u upstream --tag $1; }; f"
-    put = "!f() { git push -u upstream --tag $1; }; f"
-    pom = "!f() { git push -u origin --tag $1; }; f"
+    po = "!f() { git push -u origin --tag $1; }; f"
+    pof = "!f() { git push -f -u origin --tag $1; }; f"
     up = "!f() { git fetch upstream && git merge upstream/$1; }; f"
     sup = "!f() { git fetch --recurse-submodules upstream && git merge upstream/$1; }; f"
     op = "!f() { git fetch origin && git merge origin/$1; }; f"
