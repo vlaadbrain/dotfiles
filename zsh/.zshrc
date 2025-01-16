@@ -123,7 +123,7 @@ alias ns='netstat -utn'
 alias nslookup='nslookup -sil'
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias telnet='TERM=vt100 nc -vz'
-alias vi='vim'
+alias vi='nvim'
 alias vim='nvim'
 alias jobs='jobs -l'
 alias ecrLogin='eval $(aws ecr get-login --no-include-email --region us-east-1)'
@@ -138,27 +138,6 @@ function devdns() {
 function proddns() {
     nslookup "$1" ns-1114.awsdns-11.org
 }
-
-export ATLASSIAN_TOKEN=8LvRegXzbYq5yE1i4Jq831FD
-export GITHUB_TOKEN=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
-export YEXT_TOKEN=${GITHUB_TOKEN}
-export GIT_TOKEN=${GITHUB_TOKEN}
-export NPM_TOKEN=${GITHUB_TOKEN}
-
-# If you need to have openjdk@21 first in your PATH, run:
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
-export PATH="${JAVA_HOME}/bin:$PATH"
-
-# For compilers to find openjdk@21 you may need to set:
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
-
-#export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
-#
-export PATH="$HOME/src/flutter/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
@@ -245,7 +224,6 @@ export BAT_THEME="Solarized (dark)"
 eval "$(zoxide init zsh)"
 
 alias cd="z"
-export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
