@@ -123,7 +123,7 @@ alias ns='netstat -utn'
 alias nslookup='nslookup -sil'
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias telnet='TERM=vt100 nc -vz'
-alias vi='vim'
+alias vi='nvim'
 alias vim='nvim'
 alias jobs='jobs -l'
 alias ecrLogin='eval $(aws ecr get-login --no-include-email --region us-east-1)'
@@ -244,7 +244,6 @@ export BAT_THEME="Solarized (dark)"
 eval "$(zoxide init zsh)"
 
 alias cd="z"
-export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
 
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
