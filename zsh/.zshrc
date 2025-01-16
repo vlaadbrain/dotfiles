@@ -210,12 +210,12 @@ _fzf_compgen_dir() {
 source ~/.fzf-git.sh/fzf-git.sh
 
 # --- setup fzf theme ---
-fg="#CBE0F0"
-bg="#011628"
-bg_highlight="#143652"
-purple="#B388FF"
-blue="#06BCE4"
-cyan="#2CF9ED"
+fg="#93a1a1"
+bg="#002936"
+bg_highlight="#073642"
+purple="#6c71c4"
+blue="#268bd2"
+cyan="#2aa198"
 
 export FZF_DEFAULT_OPTS="--color=fg:${fg},bg:${bg},hl:${purple},fg+:${fg},bg+:${bg_highlight},hl+:${purple},info:${blue},prompt:${cyan},pointer:${cyan},marker:${cyan},spinner:${cyan},header:${cyan}"
 
