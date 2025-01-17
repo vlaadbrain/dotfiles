@@ -236,6 +236,10 @@ _fzf_comprun() {
   esac
 }
 
+# ---- eza config ----
+
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+
 # ---- bat theme ----
 
 export BAT_THEME="Solarized (dark)"
