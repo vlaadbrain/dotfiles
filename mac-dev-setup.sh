@@ -25,5 +25,15 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if ! hash stow
 then
-  stow -t ~ 1Password bat eza flutter ghostty git iterm2 npm tmux zsh
+  stow -t ~ git
+  stow -t ~ 1Password
+  stow -t ~ ghostty
+  stow -t ~ iterm2
+  stow -t ~ bat
+  stow -t ~ eza
+  stow -t ~ fzf
+  stow -t ~ flutter
+  stow -t ~ npm
+  stow -t ~ tmux
+  stow -t ~ zsh
 fi
