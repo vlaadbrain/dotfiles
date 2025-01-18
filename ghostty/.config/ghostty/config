@@ -2,7 +2,7 @@
 #foreground = 869395
 
 
-theme = "/Users/carlos.torres/.config/ghostty/themes/Solarized Dark - Cool"
+theme = "Solarized Dark - Cool"
 
 font-family = "Hack Nerd Font Mono"
 font-style = "Regular"
@@ -16,3 +16,5 @@ window-padding-color = background
 copy-on-select = true
 
 shell-integration = zsh
+
+# macos-titlebar-style = hidden
