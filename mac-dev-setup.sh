@@ -32,7 +32,6 @@ then
   stow -t ~ bat
   stow -t ~ eza
   stow -t ~ fzf
-  stow -t ~ flutter
   stow -t ~ npm
   stow -t ~ tmux
   stow -t ~ zsh
