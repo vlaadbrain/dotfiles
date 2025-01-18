@@ -29,7 +29,6 @@ then
   stow -t ~ 1Password
   stow -t ~ ghostty
   stow -t ~ iterm2
-  stow -t ~ bat
   stow -t ~ eza
   stow -t ~ fzf
   stow -t ~ npm
