@@ -20,3 +20,10 @@ brew bundle install --file=~/.config/dotfiles/Brewfile
 ## Node / Javascript
 mkdir ~/.nvm
 nvm install node                                                                                     # "node" is an alias for the latest version
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if ! hash stow
+then
+  stow -t ~ 1Password bat eza flutter ghostty git iterm2 npm tmux zsh
+fi
