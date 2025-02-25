@@ -7,6 +7,8 @@ export NPM_TOKEN=${GITHUB_TOKEN}
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
 export PATH="${JAVA_HOME}/bin:$PATH"
 
+export PATH="/opt/homebrew/bin:$PATH"
+
 # For compilers to find openjdk@21 you may need to set:
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 
