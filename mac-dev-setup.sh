@@ -34,4 +34,5 @@ then
   stow -t ~ npm
   stow -t ~ tmux
   stow -t ~ zsh
+  stow -t ~ nvim
 fi
