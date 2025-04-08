@@ -29,8 +29,9 @@ brew "utf8proc", args: ["HEAD"]
 brew "wget"
 brew "yazi"
 brew "zoxide"
-cask "ghostty"
 brew "clamav"
 brew "apktool"
 brew "fortune"
 brew "minicom"
+
+cask "ghostty"
