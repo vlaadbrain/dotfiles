@@ -35,4 +35,5 @@ then
   stow -t ~ tmux
   stow -t ~ zsh
   stow -t ~ nvim
+  stow -t ~ yabai
 fi
