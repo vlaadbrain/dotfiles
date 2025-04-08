@@ -1,5 +1,5 @@
-tap "homebrew/bundle"
 tap "leoafarias/fvm"
+
 brew "stow"
 brew "ast-grep"
 brew "bat"
