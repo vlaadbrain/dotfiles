@@ -16,6 +16,7 @@ return {
         dart = {
           completeFunctionCalls = true,
           showTodos = true,
+          hint = { enable = true };
         },
       },
     }

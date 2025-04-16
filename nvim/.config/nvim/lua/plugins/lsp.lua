@@ -7,6 +7,9 @@ return {
 
     { 'j-hui/fidget.nvim', opts = {} },
   },
+  opts = {
+    inlay_hints = { enabled = true },
+  },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('grayhat-lsp-attach', { clear = true }),
@@ -24,6 +27,10 @@ return {
         map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
         map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+        map('<leader>th', function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+        end, '[T]oggle Inlay [H]ints')
+
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -48,12 +55,6 @@ return {
               vim.api.nvim_clear_autocmds { group = 'grayhat-lsp-highlight', buffer = event2.buf }
             end,
           })
-        end
-
-        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-          map('<leader>th', function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-          end, '[T]oggle Inlay [H]ints')
         end
       end,
     })
@@ -94,7 +95,8 @@ return {
               globals = { 'vim' }
             -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
             -- disable = { 'missing-fields' },
-            }
+            },
+            hint = { enable = true }
           },
         },
       },
