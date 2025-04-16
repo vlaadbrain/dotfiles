@@ -1,3 +1,7 @@
+--[[ require('nord').setup({
+  borders = true
+})
+]]
 require('solarized').setup({})
 
 vim.o.termguicolors = true

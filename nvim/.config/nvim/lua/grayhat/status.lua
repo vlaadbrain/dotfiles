@@ -4,6 +4,8 @@ require('lualine').setup {
     --theme = 'solarized_light',
     theme = 'papercolor_dark',
     --theme = 'everforest',
+    --theme = 'nord',
+    --theme = 'OceanicNext',
     section_separators = '',
     component_separators = '',
   },
