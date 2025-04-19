@@ -18,3 +18,5 @@ export PATH="$HOME/src/flutter/bin:$PATH"
 
 # add ruby to the path
 export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
+
+export EDITOR=nvim
