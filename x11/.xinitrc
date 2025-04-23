@@ -2,10 +2,11 @@
 # dwm startup-script:
 #
 # Apply my fonts
-xset +fp ~/.terminus &
-#xset fp rehash
+# xset +fp ~/.terminus &
+# xset fp rehash
 # source my Xresources
 xrdb -load ~/.Xdefaults
+setxkbmap -option ctrl:swapcaps
 
 export PATH=$HOME/bin:$PATH
 exec ${HOME}/bin/startdwm &
@@ -26,5 +27,6 @@ eval `ssh-agent`
 
 wait $DWMPID
 
+setxkbmal -option
 ssh-agent -k
 kill $SDWMBARPID
