@@ -69,7 +69,7 @@ return {
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    local servers = {
+    local servers = {}
       -- clangd = {},
       -- gopls = {},
       -- pyright = {},
@@ -82,7 +82,8 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       -- ts_ls = {},
       --
-      lua_ls = {
+    if vim.loop.os_uname().sysname ~= "FreeBSD" then
+      servers.lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
         -- capabilities = capabilities,
@@ -93,31 +94,36 @@ return {
             },
             diagnostics = {
               globals = { 'vim' }
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- disable = { 'missing-fields' },
+              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+              -- disable = { 'missing-fields' },
             },
             hint = { enable = true }
           },
         },
-      },
-      astro = {
+      }
+
+      servers.astro = {
         capabilities = capabilities,
         on_attach = on_attach,
         filetypes = { 'astro' },
-      },
-    }
+      }
+    end
 
     require('mason').setup()
 
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'stylua',
-      'angularls',
-      'astro',
-      'ast_grep',
-      'eslint',
-      'ts_ls'
-    })
+
+    if vim.loop.os_uname().sysname ~= "FreeBSD" then
+      vim.list_extend(ensure_installed, {
+        'stylua',
+        'angularls',
+        'astro',  
+        'ast_grep',
+        'eslint',
+        'ts_ls'
+      })
+    end
+  
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
