@@ -25,15 +25,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if ! hash stow
 then
-  stow -t ~ git
-  stow -t ~ 1Password
-  stow -t ~ ghostty
-  stow -t ~ iterm2
-  stow -t ~ eza
-  stow -t ~ fzf
-  stow -t ~ npm
-  stow -t ~ tmux
-  stow -t ~ zsh
-  stow -t ~ nvim
-  stow -t ~ yabai
+	exec ./stow-setup.sh
 fi
