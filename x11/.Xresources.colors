@@ -1,0 +1,141 @@
+!*cursorColor:    rgb:c0/c4/c8
+!*cursorColor2:   rgb:00/00/00
+
+!*foreground:    rgb:a0/a0/a0
+!*background:    rgb:00/00/00
+
+!=== Hadess colors ===
+!!black
+!*color0:    rgb:00/00/00
+!*color8:    rgb:60/60/60
+!!red
+!*color1:    rgb:b0/70/50
+!*color9:    rgb:d0/90/70
+!!green
+!*color2:    rgb:50/b0/70
+!*color10:   rgb:70/d0/90
+!!yellow
+!*color3:    rgb:a0/a0/70
+!*color11:   rgb:c0/c0/90
+!!blue
+!*color4:    rgb:50/70/b0
+!*color12:   rgb:70/90/d0
+!!magenta
+!*color5:    rgb:a0/70/a0
+!*color13:   rgb:c0/90/c0
+!!cyan
+!*color6:    rgb:70/a0/a0
+!*color14:   rgb:90/c0/c0
+!!white
+!*color7:    rgb:a0/a0/a0
+!*color15:   white
+!=== End of Hadess Colors ===
+
+!=== AKK Colors ===
+!!black
+!*color0:   #000000
+!*color8:   gray40
+!!red
+!*color1:   #9e1828
+!*color9:   #cf6171
+!!green
+!*color2:   #9e1828
+!*color10:  #c5f779
+!!yellow
+!*color3:   #968a38
+!*color11:  #fff796
+!!blue
+!*color4:   #414171
+!*color12:  #4186be
+!!magenta
+!*color5:   #963c59
+!*color13:  #cf9ebe
+!!cyan
+!*color6:   #418179
+!*color14:  #71bebe
+!!white
+!*color7:   gray
+!*color15:  white
+!=== END AKK COLORS ===
+
+!=== Jasta Colors ===
+!!black
+!*color0:  #000000
+!*color8:  gray40
+!!red
+!*color1:  #9e1828
+!*color9:  #cf6171
+!!green
+!*color2:  #5cb247
+!*color10: #c5f779
+!!yellow
+!*color3:  #968a38
+!*color11: #fff796
+!!blue
+!*color4:  #4161a0
+!*color12: #4186be
+!!magenta
+!*color5:  #9b768e
+!*color13: #cf9ebe
+!!cyan
+!*color6:  #419189
+!*color14: #71bebe
+!!white
+!*color7:  gray
+!*color15: #dddddd
+!=== End of Jasta Colors ===
+
+!*colorBDMode:  true
+!*colorBD:      #719b96
+!*colorBLMode:  true
+!*colorBL:      #719b96
+!*colorULMode:  true
+!*colorUL:      #719b96
+!*colorRVMode:  true
+!*colorRV:      #719b96
+
+!Colors -> arch forum
+!*foreground: #696969
+!*background: #fffef6
+!*color0:  #363636
+!*color8:  #424242
+!*color1:  #C37561
+!*color9:  #D19485
+!*color2:  #A0A57E
+!*color10: #7f8264
+!*color3:  #b58b62
+!*color11: #DEBC9C
+!*color4:  #1d2b41
+!*color12: #98A1B9
+!*color5:  #AB716D
+!*color13: #b4d2c8
+!*color6:  #98B9B1
+!*color14: #769293
+!*color7:  #9ba0a7
+!*color15: #6e7383
+
+! jwr dark
+!!black
+!*color0:  #333333
+!*color8:  #3D3D3D
+!!red
+!*color1:  #8C4665
+!*color9:  #BF4D80
+!!green
+!*color2:  #287373
+!*color10: #53A6A6
+!!yellow
+!*color3:  #7C7C99
+!*color11: #9E9ECB
+!!blue
+!*color4:  #395573
+!*color12: #477AB3
+!!magenta
+!*color5:  #5E468C
+!*color13: #7E62B3
+!!cyan
+!*color6:  #31658C
+!*color14: #6096BF
+!!white
+!*color7:  #899CA1
+!*color15: #C0C0C0

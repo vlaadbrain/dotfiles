@@ -1,0 +1,5 @@
+#!/bin/sh
+
+while true; do
+    ~/bin/dwm 1> ~/tmp/dwm.log 2>&1
+done

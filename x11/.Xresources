@@ -1,0 +1,35 @@
+#include "/home/ctorres/.Xresources.solarized"
+!# include "/home/ctorres/.Xresources.colors"
+!# include "/home/ctorres/.Xresources.xcalc"
+!# include "/home/ctorres/.Xresources.xlock"
+
+*scrollBar:      false
+*internalBorder: 2
+
+*backspacekey:   
+*deletekey:      
+
+XTerm*termName:       xterm-256color
+XTerm*font:            -*-terminus-medium-r-*-*-16-*-*-*-*-*-iso8859-*
+XTerm*boldFont:        -*-terminus-bold-r-*-*-16-*-*-*-*-*-iso8859-*
+URxvt*termName:       rxvt-256color
+
+URxvt.perl-ext-common: default,matcher
+URxvt.matcher.button: 1
+URxvt.urlLauncher: surf
+
+*transparent:    false
+!*shading:        40
+!*fading:         50
+*font:            -*-terminus-medium-r-*-*-16-*-*-*-*-*-iso8859-*
+*boldFont:        -*-terminus-bold-r-*-*-16-*-*-*-*-*-iso8859-*
+*reverseVideo:   false
+*visualBell:     false
+*saveLines:      4000
+
+Xft.dpi:        132
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.autohint:   true
+Xft.hintstyle:  hintfull

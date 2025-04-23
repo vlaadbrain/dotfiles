@@ -1,0 +1,41 @@
+#!/bin/sh
+# dwm startup-script:
+#
+# Apply my fonts
+xset +fp ~/.terminus &
+#xset fp rehash
+# source my Xresources
+xrdb -load ~/.Xdefaults
+
+export PATH=$HOME/bin:$PATH
+
+exec ${HOME}/bin/startdwm &
+DWMPID=$!
+
+xsetroot -solid darkslategray &
+xset s 3300
+xset +dpms
+xset dpms 3600 3900 4200
+# Turn off beeps:
+xset -b &
+
+# exec ${HOME}/bin/xsidle.sh slock &
+# XSIDLEPID=$!
+/usr/sbin/alsactl -f ${HOME}/.alsa.state restore
+
+nice mpd &
+#nice conky -c ~/.conkyrc1 -q &
+#nice conky -c ~/.conkyrc2 -q &
+#nice xbmouse -b 8 xkev -c -e h &
+#nice xbmouse -b 9 xkev -c -e l &
+${HOME}/bin/dwmstatus &
+${HOME}/bin/wmname LG3D &
+eval `ssh-agent`
+
+wait $DWMPID
+
+ssh-agent -k
+/usr/sbin/alsactl -f ${HOME}/.alsa.state store
+rm -rf ${HOME}/tmp/*
+#kill $XSIDLEPID
+#killall -q conky
