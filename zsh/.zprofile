@@ -8,7 +8,7 @@ export NPM_TOKEN=${GITHUB_TOKEN}
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
   PATH=$HOME/bin:$PATH
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  eval "$(`which brew` shellenv)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 PATH="$HOME/src/flutter/bin:$PATH"
