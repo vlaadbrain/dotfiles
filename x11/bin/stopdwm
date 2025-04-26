@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ps ux | grep '/home/cjt/bin/startdwm' | grep -v grep | awk '{print $2}' | xargs kill

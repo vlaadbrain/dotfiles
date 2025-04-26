@@ -9,6 +9,7 @@ xrdb -load ~/.Xdefaults
 setxkbmap -option ctrl:swapcaps
 
 export PATH=$HOME/bin:$PATH
+
 exec ${HOME}/bin/startdwm &
 DWMPID=$!
 
