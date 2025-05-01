@@ -107,37 +107,74 @@ return {
         on_attach = on_attach,
         filetypes = { 'astro' },
       }
+
+      require('mason').setup()
+
+      local ensure_installed = vim.tbl_keys(servers or {})
+
+      if vim.loop.os_uname().sysname ~= "FreeBSD" then
+        vim.list_extend(ensure_installed, {
+          'stylua',
+          'angularls',
+          'astro',  
+          'ast_grep',
+          'eslint',
+          'ts_ls'
+        })
+      end
+
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+      require('mason-lspconfig').setup {
+        handlers = {
+          function(server_name)
+            local server = servers[server_name] or {}
+            -- This handles overriding only values explicitly passed
+            -- by the server configuration above. Useful when disabling
+            -- certain features of an LSP (for example, turning off formatting for ts_ls)
+            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+            require('lspconfig')[server_name].setup(server)
+          end,
+        },
+      }
     end
+    if vim.loop.os_uname().sysname == "FreeBSD" then
+      local lspconfig = require('lspconfig')
+      local util = require 'lspconfig.util'
 
-    require('mason').setup()
-
-    local ensure_installed = vim.tbl_keys(servers or {})
-
-    if vim.loop.os_uname().sysname ~= "FreeBSD" then
-      vim.list_extend(ensure_installed, {
-        'stylua',
-        'angularls',
-        'astro',  
-        'ast_grep',
-        'eslint',
-        'ts_ls'
-      })
-    end
-  
-    require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-    require('mason-lspconfig').setup {
-      handlers = {
-        function(server_name)
-          local server = servers[server_name] or {}
-          -- This handles overriding only values explicitly passed
-          -- by the server configuration above. Useful when disabling
-          -- certain features of an LSP (for example, turning off formatting for ts_ls)
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
+      lspconfig.ccls.setup {
+        cmd = { "ccls" },
+        filetypes = { "c", "cpp", "objc", "objcpp" },
+        on_attach = on_attach,
+        --Ban the single file support
+        single_file_support = true,
+        --The root directory acquisition rules
+        root_dir = function(fname)
+          return util.root_pattern('compile_commands.json', 'compile_flags.txt', '.git', '.ccls')(fname) or util.find_git_ancestor(fname) or vim.fn.getcwd()
         end,
-      },
-    }
+        --Exptize parameters
+        init_options = {
+          compilationDatabaseDirectory = "build",
+          cache = {
+            directory = ".ccls-cache";
+          },
+          index = {
+            threads = 32;
+          },
+          --The reader needs to be customized, and some system libraries have not been indexed by CLANG default
+          --In the CLANG ++ -v -E -E -X C ++ -View the default INCLUDE path
+          clang = {
+            extraArgs = {
+              "-I.",
+              "-I/usr/include",
+              "-I/usr/local/include",
+              "-I/usr/include/c++/v1",
+            },
+            resourceDir = ""
+          }
+        }
+      }
+    end
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
