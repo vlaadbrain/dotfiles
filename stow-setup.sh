@@ -12,3 +12,4 @@ stow -t ~ zsh
 stow -t ~ oh-my-zsh
 stow -t ~ nvim
 stow -t ~ x11
+stow -t ~ mpd
