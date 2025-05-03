@@ -20,7 +20,7 @@ xset dpms 3600 3900 4200
 # Turn off beeps:
 xset -b &
 
-/usr/local/bin/sdwmbar &
+dwmstatus &
 SDWMBARPID=$!
 
 ${HOME}/bin/wmname LG3D &
