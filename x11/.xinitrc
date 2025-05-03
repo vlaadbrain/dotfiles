@@ -20,14 +20,31 @@ xset dpms 3600 3900 4200
 # Turn off beeps:
 xset -b &
 
+exec ${HOME}/bin/xsidle.sh slock &
+XSIDLEPID=$!
+
+dbus-launch --exit-with-x11
+
+pipewire 2>&1 ~/tmp/pipewire.log & 
+PIPEWIREPID=$!
+
+/usr/sbin/alsactl -f ${HOME}/.alsa.state restore
+nice mpd &
+
 dwmstatus &
 SDWMBARPID=$!
 
 ${HOME}/bin/wmname LG3D &
 eval `ssh-agent`
 
+##### WAIT FOR DWM!! #####
 wait $DWMPID
+#####    Exiting!    #####
 
 setxkbmal -option
 ssh-agent -k
+/usr/sbin/alsactl -f ${HOME}/.alsa.state store
+
 kill $SDWMBARPID
+kill $PIPEWIREPID
+kill $XSIDLEPID
