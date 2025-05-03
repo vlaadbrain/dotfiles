@@ -13,3 +13,5 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # add ruby to the path
   export PATH="/opt/homebrew/opt/ruby@3.2/bin:$PATH"
 fi
+
+export XDG_CONFIG_HOME="${HOME}/.config"
