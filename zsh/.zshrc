@@ -267,3 +267,5 @@ alias cd="z"
 ## [/Completion]
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[[ -f $HOME/bin/op ]] &&  eval "$(op completion zsh)"; compdef _op op
