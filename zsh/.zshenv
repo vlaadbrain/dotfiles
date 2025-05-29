@@ -2,8 +2,6 @@ _add_to_path_uniq() {
   local new_path=$1
   shift
 
-  echo "checking for $new_path in $PATH ..."
-
   if [[ ":$PATH:" != *":$new_path:"* ]]; then
     export PATH=$new_path:$PATH
   fi
