@@ -25,14 +25,14 @@ XSIDLEPID=$!
 
 dbus-launch --exit-with-x11
 
-pipewire 2>&1 ~/tmp/pipewire.log & 
+pipewire 2>&1 >> ~/tmp/pipewire.log & 
 PIPEWIREPID=$!
 
 /usr/sbin/alsactl -f ${HOME}/.alsa.state restore
 nice mpd &
 
 dwmstatus &
-SDWMBARPID=$!
+DWMSTATUSPID=$!
 
 ${HOME}/bin/wmname LG3D &
 eval `ssh-agent`
@@ -41,10 +41,10 @@ eval `ssh-agent`
 wait $DWMPID
 #####    Exiting!    #####
 
-setxkbmal -option
+setxkbmap -option
 ssh-agent -k
 /usr/sbin/alsactl -f ${HOME}/.alsa.state store
 
-kill $SDWMBARPID
+kill $DWMSTATUSPID
 kill $PIPEWIREPID
 kill $XSIDLEPID
