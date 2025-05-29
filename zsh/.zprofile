@@ -1,19 +1,3 @@
-export EDITOR PATH
-export ATLASSIAN_TOKEN=8LvRegXzbYq5yE1i4Jq831FD
-export GITHUB_TOKEN=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
-export YEXT_TOKEN=${GITHUB_TOKEN}
-export GIT_TOKEN=${GITHUB_TOKEN}
-export NPM_TOKEN=${GITHUB_TOKEN}
+EDITOR=vim
 
-if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
-  PATH=$HOME/bin:$PATH
-  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    PATH=$HOME/src/flutter/bin:$PATH
-    PATH=$HOME/src/android-studio/bin:$PATH
-  fi
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  PATH="$HOME/src/flutter/bin:$PATH"
-fi
-
-EDITOR=nvim
+export EDITOR
