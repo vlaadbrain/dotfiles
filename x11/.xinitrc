@@ -8,8 +8,6 @@
 xrdb -load ~/.Xdefaults
 setxkbmap -option ctrl:swapcaps
 
-export PATH=$HOME/bin:$PATH
-
 exec ${HOME}/bin/startdwm &
 DWMPID=$!
 
@@ -31,7 +29,7 @@ PIPEWIREPID=$!
 /usr/sbin/alsactl -f ${HOME}/.alsa.state restore
 nice mpd &
 
-dwmstatus &
+${HOME}/bin/dwmstatus &
 DWMSTATUSPID=$!
 
 ${HOME}/bin/wmname LG3D &
