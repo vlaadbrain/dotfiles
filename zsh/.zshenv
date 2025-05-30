@@ -15,8 +15,20 @@ export NPM_TOKEN=${GITHUB_TOKEN}
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
   _add_to_path_uniq "$HOME/bin"
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    _add_to_path_uniq "$HOME/src/flutter/bin"
-    _add_to_path_uniq "$HOME/src/android-studio/bin"
+    if [[ -d "$HOME/src/flutter" ]]; then
+      export CHROME_EXECUTABLE=/usr/bin/chromium
+      _add_to_path_uniq "$HOME/src/flutter/bin"
+    fi
+    if [[ -d "$HOME/src/android-studio" ]]; then
+      _add_to_path_uniq "$HOME/src/android-studio/bin"
+    fi
+    if [[ -d "$HOME/Android/Sdk" ]]; then
+      # https://developer.android.com/tools/variables#set
+      export ANDROID_HOME=$HOME/Android/Sdk
+      _add_to_path_uniq "$ANDROID_HOME/tools"
+      _add_to_path_uniq "$ANDROID_HOME/tools/bin"
+      _add_to_path_uniq "$ANDROID_HOME/platform-tools"
+    fi
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
