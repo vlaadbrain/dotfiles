@@ -2,7 +2,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="vlaad"
 
-plugins=(git themes)
+plugins=(git themes fzf zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -36,7 +36,7 @@ alias ecrLogin='eval $(aws ecr get-login --no-include-email --region us-east-1)'
 alias cleanDockerImages='docker rmi $(docker images -q --filter dangling=true)'
 alias ec2bastion='ssh -p 220 ctorres@ec2-3-216-164-52.compute-1.amazonaws.com'
 alias ssh-add='SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add'
-alias cat=bat
+alias cat=batcat
 alias pricecachesku='(){ node ./src/skus/index.js $1 ; }'
 
 function devdns() {
@@ -99,10 +99,6 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# ---- configure fzf ----
-
-eval "$(fzf --zsh)"
-
 # -- Use fd instead of fzf --
 
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
@@ -160,8 +156,6 @@ export EZA_CONFIG_DIR="$HOME/.config/eza"
 export BAT_THEME="Solarized (dark)"
 
 # ---- Zoxide (better cd) ----
-eval "$(zoxide init zsh)"
-
 alias cd="z"
 
 ## [Completion]
