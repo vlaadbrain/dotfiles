@@ -1,7 +1,7 @@
-#include "/home/ctorres/.Xresources.solarized"
-!# include "/home/ctorres/.Xresources.colors"
-!# include "/home/ctorres/.Xresources.xcalc"
-!# include "/home/ctorres/.Xresources.xlock"
+#include "/home/cjt/.Xresources.solarized"
+!# include "/home/cjt/.Xresources.colors"
+!# include "/home/cjt/.Xresources.xcalc"
+!# include "/home/cjt/.Xresources.xlock"
 
 *scrollBar:      false
 *internalBorder: 2
