@@ -21,11 +21,6 @@ xset -b &
 exec ${HOME}/bin/xsidle.sh slock &
 XSIDLEPID=$!
 
-dbus-launch --exit-with-x11
-
-pipewire 2>&1 >> ~/tmp/pipewire.log & 
-PIPEWIREPID=$!
-
 /usr/sbin/alsactl -f ${HOME}/.alsa.state restore
 nice mpd &
 
@@ -44,5 +39,4 @@ ssh-agent -k
 /usr/sbin/alsactl -f ${HOME}/.alsa.state store
 
 kill $DWMSTATUSPID
-kill $PIPEWIREPID
 kill $XSIDLEPID
