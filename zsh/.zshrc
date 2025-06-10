@@ -37,6 +37,7 @@ alias cleanDockerImages='docker rmi $(docker images -q --filter dangling=true)'
 alias ec2bastion='ssh -p 220 ctorres@ec2-3-216-164-52.compute-1.amazonaws.com'
 alias ssh-add='SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add'
 alias pricecachesku='(){ node ./src/skus/index.js $1 ; }'
+alias 1pass='eval $(op signin)'
 
 function devdns() {
     nslookup "$1" ns-1114.awsdns-11.org

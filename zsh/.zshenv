@@ -7,11 +7,6 @@ _add_to_path_uniq() {
   fi
 }
 
-export GITHUB_TOKEN=''
-export YEXT_TOKEN=${GITHUB_TOKEN}
-export GIT_TOKEN=${GITHUB_TOKEN}
-export NPM_TOKEN=${GITHUB_TOKEN}
-
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
   _add_to_path_uniq "$HOME/bin"
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
