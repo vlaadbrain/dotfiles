@@ -170,4 +170,4 @@ alias cd="z"
 [[ -f $HOME/bin/op ]] &&  eval "$(op completion zsh)"; compdef _op op
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+[[ "$OSTYPE" == "darwin"* ]] && source <(ng completion script);
