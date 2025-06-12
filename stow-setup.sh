@@ -13,3 +13,4 @@ stow -R -t ~ oh-my-zsh
 stow -R -t ~ nvim
 stow -R -t ~ x11
 stow -R -t ~ mpd
+stow -R -t ~ impala
