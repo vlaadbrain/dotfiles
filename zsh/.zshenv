@@ -26,7 +26,12 @@ if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
     fi
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [[ -d "/opt/homebrew/bin" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif (( $+commands[brew] )); then
+    eval "$(brew shellenv)"
+  fi
+
   _add_to_path_uniq "$HOME/src/flutter/bin"
 
   # If you need to have openjdk@21 first in your PATH, run:
