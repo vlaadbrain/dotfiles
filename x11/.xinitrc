@@ -8,6 +8,8 @@
 xrdb -load ~/.Xdefaults
 setxkbmap -option ctrl:swapcaps
 
+PATH=${PATH}:/home/cjt/bin
+
 exec ${HOME}/bin/startdwm &
 DWMPID=$!
 
@@ -24,10 +26,10 @@ XSIDLEPID=$!
 /usr/sbin/alsactl -f ${HOME}/.alsa.state restore
 nice mpd &
 
-${HOME}/bin/dwmstatus &
+exec ${HOME}/bin/dwmstatus &
 DWMSTATUSPID=$!
 
-${HOME}/bin/wmname LG3D &
+# ${HOME}/bin/wmname LG3D &
 eval `ssh-agent`
 
 ##### WAIT FOR DWM!! #####
