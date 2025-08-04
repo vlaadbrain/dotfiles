@@ -1,0 +1,66 @@
+@import "../omarchy/current/theme/waybar.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: Hack Nerd Font Propo;
+  font-size: 12px;
+}
+
+window#waybar {
+  background-color: @background;
+  color: @foreground;
+  box-shadow: inset 0 -2px @normbrdr;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial;
+  min-width: 9px;
+  padding: 0 6px;
+  color: @foreground;
+  background-color: @background;
+  box-shadow: inset 0 -2px @normbrdr;
+}
+
+#workspaces button.active {
+  background-color: @selbg;
+  box-shadow: inset 0 -2px @selfg;
+}
+
+#workspaces button.urgent {
+  box-shadow: inset 0 -2px @selbrdr;
+}
+
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio,
+#clock,
+#custom-power-menu {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#custom-expand-icon {
+  margin-right: 12px;
+}
+
+tooltip {
+  padding: 2px;
+  color: @selfg;
+  background-color: @selbg;
+
+  border: 2px solid @selbrdr;
+  border-radius: 4;
+}
