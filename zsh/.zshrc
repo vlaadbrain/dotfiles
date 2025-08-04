@@ -171,3 +171,11 @@ alias cd="z"
 
 # Load Angular CLI autocompletion.
 [[ "$OSTYPE" == "darwin"* ]] && source <(ng completion script);
+
+# pnpm
+export PNPM_HOME="/home/cjt/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
