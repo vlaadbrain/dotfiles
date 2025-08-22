@@ -1,5 +1,6 @@
 return {
-  'nvim-flutter/flutter-tools.nvim',
+  'akinsho/flutter-tools.nvim',
+  -- 'nvim-flutter/flutter-tools.nvim',
   lazy = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -16,7 +17,8 @@ return {
       dev_tools = {
         autostart = true, -- autostart devtools server if not detected
         auto_open_browser = true, -- Automatically opens devtools in the browser
-        open_cmd = 'splitbelow ++bo',
+        -- open_cmd = 'splitbelow ++bo',
+        open_cmd = 'vsplit',
       },
       lsp = {
         color = { -- show the derived colours for dart variables
