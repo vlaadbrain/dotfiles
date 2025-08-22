@@ -4,8 +4,8 @@ local harpoon = require("harpoon"); harpoon:setup()
 local telescope = require('telescope.builtin');
 local tt = require('telescope.themes');
 
-vim.keymap.set("n", "<leader>fb", "<cmd>Neotree source=filesystem position=float<cr>", { desc = "File Browser"})
-vim.keymap.set("n", "<leader>b", "<cmd>Neotree source=filesystem position=left toggle<cr>", { desc = "Toggle File Browser"})
+--vim.keymap.set("n", "<leader>fb", "<cmd>Neotree source=filesystem position=float<cr>", { desc = "File Browser"})
+--vim.keymap.set("n", "<leader>b", "<cmd>Neotree source=filesystem position=left toggle<cr>", { desc = "Toggle File Browser"})
 vim.keymap.set("n", "<leader>nf", "<cmd> ene <BAR> startinsert<cr>", { desc = "New File Insert"})
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down"})
@@ -21,8 +21,8 @@ vim.keymap.set("n", "<leader>P", '"+P', { desc = "paste from clipboard after cur
 vim.keymap.set("v", "<leader>p", '"+p', { desc = "paste from clipboard"})
 vim.keymap.set("v", "<leader>P", '"+P', { desc = "paste from clipboard after cursor"})
 
-vim.keymap.set("n", "<leader>ff", function() telescope.find_files(tt.get_dropdown({})) end, { desc = "Telescope Find Files" })
-vim.keymap.set("n", "<leader>fg", function() telescope.live_grep(tt.get_dropdown({ winblend = 10})) end, { desc = "Telescope Find Grep" })
+vim.keymap.set("n", "<leader>ff", function() telescope.find_files(tt.get_ivy({})) end, { desc = "Telescope Find Files" })
+vim.keymap.set("n", "<leader>fg", function() telescope.live_grep(tt.get_ivy({})) end, { desc = "Telescope Find Grep" })
 vim.keymap.set("n", "<leader>fh", function() telescope.help_tags() end, { desc = "Telescope Search help" })
 
 vim.keymap.set("n", "<leader>vk" , function() telescope.keymaps() end, { desc = "NVIM keymaps" })
