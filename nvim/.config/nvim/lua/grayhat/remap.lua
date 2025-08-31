@@ -5,7 +5,7 @@ local telescope = require('telescope.builtin');
 local tt = require('telescope.themes');
 
 --vim.keymap.set("n", "<leader>fb", "<cmd>Neotree source=filesystem position=float<cr>", { desc = "File Browser"})
---vim.keymap.set("n", "<leader>b", "<cmd>Neotree source=filesystem position=left toggle<cr>", { desc = "Toggle File Browser"})
+vim.keymap.set("n", "<leader>b", "<cmd>Neotree source=filesystem position=float toggle<cr>", { desc = "Toggle File Browser"})
 vim.keymap.set("n", "<leader>nf", "<cmd> ene <BAR> startinsert<cr>", { desc = "New File Insert"})
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down"})
