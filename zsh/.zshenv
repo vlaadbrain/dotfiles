@@ -42,6 +42,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   # _add_to_path_uniq "/usr/local/opt/redis@4.0/bin"
   # add ruby to the path
   _add_to_path_uniq "/opt/homebrew/opt/ruby@3.2/bin"
+  if [[ -d "$HOME/Library/Android/sdk" ]]; then
+    # https://developer.android.com/tools/variables#set
+    export ANDROID_HOME=$HOME/Android/sdk
+    _add_to_path_uniq "$ANDROID_HOME/cmdline-tools/latest/bin"
+    _add_to_path_uniq "$ANDROID_HOME/build-tools/35.0.0"
+    _add_to_path_uniq "$ANDROID_HOME/emulator"
+    _add_to_path_uniq "$ANDROID_HOME/platform-tools"
+  fi
 fi
 
 export XDG_CONFIG_HOME="${HOME}/.config"
