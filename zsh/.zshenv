@@ -44,7 +44,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   _add_to_path_uniq "/opt/homebrew/opt/ruby@3.2/bin"
   if [[ -d "$HOME/Library/Android/sdk" ]]; then
     # https://developer.android.com/tools/variables#set
-    export ANDROID_HOME=$HOME/Android/sdk
+    export ANDROID_HOME=$HOME/Library/Android/sdk
     _add_to_path_uniq "$ANDROID_HOME/cmdline-tools/latest/bin"
     _add_to_path_uniq "$ANDROID_HOME/build-tools/35.0.0"
     _add_to_path_uniq "$ANDROID_HOME/emulator"
