@@ -4,6 +4,7 @@ stow -R -t ~ git
 stow -R -t ~ 1Password
 stow -R -t ~ ghostty
 stow -R -t ~ iterm2
+stow -R -t ~ alacritty
 stow -R -t ~ eza
 stow -R -t ~ fzf
 stow -R -t ~ npm
