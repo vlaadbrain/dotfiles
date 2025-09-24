@@ -17,9 +17,6 @@ alias ldconfig='ldconfig -N'
 alias ls="eza --color=always --git --icons=always"
 alias darkstar='ssh cjt@darkstar'
 alias arpnet='ssh cjt@174.136.109.82'
-alias aneurism='ssh ctorres@72.69.183.210'
-alias minecraft='ssh admin@52.55.99.118'
-alias spigot-v1='ssh admin@18.234.86.217'
 alias listening='netstat -napt | grep LISTEN'
 alias more='less'
 alias ns='netstat -utn'
@@ -34,23 +31,8 @@ alias ta='tmux attach-session'
 alias jobs='jobs -l'
 alias ecrLogin='eval $(aws ecr get-login --no-include-email --region us-east-1)'
 alias cleanDockerImages='docker rmi $(docker images -q --filter dangling=true)'
-alias ec2bastion='ssh -p 220 ctorres@ec2-3-216-164-52.compute-1.amazonaws.com'
 alias ssh-add='SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add'
-alias pricecachesku='(){ node ./src/skus/index.js $1 ; }'
 alias 1pass='eval $(op signin)'
-
-function devdns() {
-    nslookup "$1" ns-1114.awsdns-11.org
-}
-
-function proddns() {
-    nslookup "$1" ns-1114.awsdns-11.org
-}
-
-export GITHUB_TOKEN=''
-export YEXT_TOKEN=${GITHUB_TOKEN}
-export GIT_TOKEN=${GITHUB_TOKEN}
-export NPM_TOKEN=${GITHUB_TOKEN}
 
 # If you need to have openjdk@21 first in your PATH, run:
 export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
