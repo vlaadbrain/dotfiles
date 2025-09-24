@@ -74,8 +74,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
  
-
-
 # place this after nvm initialization!
 autoload -U add-zsh-hook
 
