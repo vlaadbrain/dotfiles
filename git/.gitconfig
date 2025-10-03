@@ -30,6 +30,7 @@
 	st = status
 	co = checkout
 	a = add --interactive
+  df = "!f() { if [ "$(tput cols)" -ge "140" ]; then git diff $@; else git -c delta.side-by-side=false diff $@; fi; }; f"
 	pu = "!f() { git push -u upstream --tag $1; }; f"
 	puf = "!f() { git push -f -u upstream --tag $1; }; f"
 	po = "!f() { git push -u origin --tag $1; }; f"
