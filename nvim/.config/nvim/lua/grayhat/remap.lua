@@ -3,6 +3,9 @@ vim.g.mapleader = ' '
 local harpoon = require("harpoon"); harpoon:setup()
 local telescope = require('telescope.builtin');
 local tt = require('telescope.themes');
+local conform = require('conform');
+
+vim.keymap.set({ "n", "v" }, "<leader>=", function() conform.format({ lsp_fallback = true, async = false, timeout_ms = 1000, }) end, { desc = "Format file or range (in visual mode)"})
 
 --vim.keymap.set("n", "<leader>fb", "<cmd>Neotree source=filesystem position=float<cr>", { desc = "File Browser"})
 vim.keymap.set("n", "<leader>b", "<cmd>Neotree source=filesystem position=float toggle<cr>", { desc = "Toggle File Browser"})

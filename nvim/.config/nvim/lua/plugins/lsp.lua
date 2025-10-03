@@ -102,6 +102,8 @@ return {
         },
       }
 
+      servers.kotlin_language_server = {}
+
       servers.astro = {
         capabilities = capabilities,
         on_attach = on_attach,
@@ -119,7 +121,8 @@ return {
           'astro',  
           'ast_grep',
           'eslint',
-          'ts_ls'
+          'ts_ls',
+          'ktlint'
         })
       end
 
