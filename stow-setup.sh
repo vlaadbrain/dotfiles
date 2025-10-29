@@ -15,3 +15,4 @@ stow -R -t ~ nvim
 stow -R -t ~ x11
 stow -R -t ~ mpd
 stow -R -t ~ impala
+stow -R -t ~ screen
