@@ -57,3 +57,8 @@
 	rebase = true
 [init]
 	defaultBranch = master
+[sendemail]
+  smtpEncryption = ssl
+  smtpServer = smtp.gmail.com
+  smtpUser = vlaadbrain@gmail.com
+  smtpServerPrt = 465
