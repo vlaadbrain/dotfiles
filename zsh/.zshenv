@@ -2,7 +2,7 @@ _add_to_path_uniq() {
   local new_path=$1
   shift
 
-  if [[ ":$PATH:" != *":$new_path:"* ]]; then
+  if [[ -d "$new_path" && ":$PATH:" != *":$new_path:"* ]]; then
     export PATH=$new_path:$PATH
   fi
 }
@@ -22,6 +22,9 @@ if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
       export ANDROID_HOME=$HOME/Android/Sdk
       _add_to_path_uniq "$ANDROID_HOME/tools"
       _add_to_path_uniq "$ANDROID_HOME/tools/bin"
+      _add_to_path_uniq "$ANDROID_HOME/cmdline-tools/latest/bin"
+      _add_to_path_uniq "$ANDROID_HOME/build-tools/36.1.0"
+      _add_to_path_uniq "$ANDROID_HOME/emulator"
       _add_to_path_uniq "$ANDROID_HOME/platform-tools"
     fi
   fi

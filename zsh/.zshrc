@@ -23,8 +23,7 @@ alias ns='netstat -utn'
 alias nslookup='nslookup -sil'
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias telnet='TERM=vt100 nc -vz'
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
 alias tn='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias ta='tmux attach-session'
@@ -34,20 +33,9 @@ alias cleanDockerImages='docker rmi $(docker images -q --filter dangling=true)'
 alias ssh-add='SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add'
 alias 1pass='eval $(op signin)'
 
-# If you need to have openjdk@21 first in your PATH, run:
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
-export PATH="${JAVA_HOME}/bin:$PATH"
-
-# For compilers to find openjdk@21 you may need to set:
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
-
-#export PATH="/usr/local/opt/redis@4.0/bin:$PATH"
-#
-export PATH="$HOME/src/flutter/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
+export NVM_DIR="$HOME/.config/nvm"
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
-  alias cat=batcat
+  alias cat=bat
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 elif [[ "$OSTYPE" == "darwin"* ]]; then

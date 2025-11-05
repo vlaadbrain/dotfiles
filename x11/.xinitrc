@@ -1,12 +1,16 @@
 #!/bin/sh
 # dwm startup-script:
+# Enable second monitor
+
+xrandr --output HDMI-0 --right-of DP-1 --noprimary --auto
+
 #
 # Apply my fonts
 # xset +fp ~/.terminus &
 # xset fp rehash
 # source my Xresources
 xrdb -load ~/.Xdefaults
-setxkbmap -option ctrl:swapcaps
+# setxkbmap -option ctrl:swapcaps
 
 PATH=${PATH}:/home/cjt/bin
 
@@ -23,7 +27,6 @@ xset -b &
 exec ${HOME}/bin/xsidle.sh slock &
 XSIDLEPID=$!
 
-/usr/sbin/alsactl -f ${HOME}/.alsa.state restore
 nice mpd &
 
 exec ${HOME}/bin/dwmstatus &
@@ -38,7 +41,6 @@ wait $DWMPID
 
 setxkbmap -option
 ssh-agent -k
-/usr/sbin/alsactl -f ${HOME}/.alsa.state store
 
 kill $DWMSTATUSPID
 kill $XSIDLEPID

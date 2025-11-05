@@ -7,12 +7,12 @@ stow -R -t ~ iterm2
 stow -R -t ~ alacritty
 stow -R -t ~ eza
 stow -R -t ~ fzf
-stow -R -t ~ npm
 stow -R -t ~ tmux
 stow -R -t ~ zsh
 stow -R -t ~ oh-my-zsh
 stow -R -t ~ nvim
 stow -R -t ~ x11
 stow -R -t ~ mpd
+stow -R -t ~ mcmpc
 stow -R -t ~ impala
 stow -R -t ~ screen
