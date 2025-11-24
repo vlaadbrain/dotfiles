@@ -23,6 +23,7 @@ alias ns='netstat -utn'
 alias nslookup='nslookup -sil'
 alias sprunge='curl -F '\''sprunge=<-'\'' http://sprunge.us'
 alias telnet='TERM=vt100 nc -vz'
+alias vim='nvim'
 alias vi='vim'
 alias tn='tmux new-session -s'
 alias tl='tmux list-sessions'
@@ -43,7 +44,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
- 
+
 # place this after nvm initialization!
 autoload -U add-zsh-hook
 
