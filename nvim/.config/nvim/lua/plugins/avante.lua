@@ -4,7 +4,7 @@ return {
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
 		---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-		provider = "claude", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
+		provider = "ollama", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
 		---@alias Mode "agentic" | "legacy"
 		mode = "agentic", -- The default mode for interaction. "agentic" uses tools to automatically generate code, "legacy" uses the old planning method to generate code.
 		-- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
@@ -21,6 +21,13 @@ return {
 					max_tokens = 4096,
 				},
 			},
+      ollama = {
+        api_key_name = "",
+        endpoint = "http://127.0.0.1:11434/v1",
+        model = "qwen2.5-coder:32b",
+        max_tokens = 4096,
+        disable_tools = true,
+      },
 		},
 		behavior = {
 			auto_apply_diff_after_generation = false,
