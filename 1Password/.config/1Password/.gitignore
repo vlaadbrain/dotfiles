@@ -1,0 +1,15 @@
+logs
+Partitions
+crashes
+Cache
+Code Cache
+Local Storage
+Shared Dictionary
+Trust Tokens*
+1password*sqlite*
+settingsWindowState
+primaryWindowState
+SharedStorage*
+Preferences
+Network Persistent State
+Crashpad/*
