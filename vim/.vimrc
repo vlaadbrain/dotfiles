@@ -15,7 +15,7 @@ Plug 'tpope/vim-endwise'          " Autocomplete end after a do
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'leafgarland/typescript-vim' " TypeScript syntax
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plug 'jparise/vim-graphql'        " GraphQL syntax
+"Plug 'jparise/vim-graphql'        " GraphQL syntax
 Plug 'styled-components/vim-styled-components'
 
 Plug 'vim-airline/vim-airline'    " Vim powerline
@@ -24,9 +24,9 @@ Plug 'vim-airline/vim-airline-themes' " base16_solarized theme
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'           " Set up fzf and fzf.vim
 
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+"Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
-Plug 'psliwka/vim-smoothie'       " Smooth scrolling
+"Plug 'psliwka/vim-smoothie'       " Smooth scrolling
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'lifepillar/vim-solarized8'
 
@@ -58,6 +58,7 @@ set mouse=a
 set number
 set numberwidth=4
 set ruler
+set colorcolumn=80
 
 " paste mode
 nnoremap <F5> :set invpaste paste?<CR>
