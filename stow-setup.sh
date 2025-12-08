@@ -13,6 +13,6 @@ stow -R -t ~ oh-my-zsh
 stow -R -t ~ nvim
 stow -R -t ~ x11
 stow -R -t ~ mpd
-stow -R -t ~ mcmpc
+stow -R -t ~ ncmpc
 stow -R -t ~ impala
 stow -R -t ~ screen
