@@ -1,5 +1,6 @@
 return {
 	"yetone/avante.nvim",
+  enabled = false, -- disable avante at startup
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
@@ -29,9 +30,14 @@ return {
         disable_tools = true,
       },
 		},
+    edit = {
+      auto_apply = false,
+      diff_preview = true,
+    },
 		behavior = {
 			auto_apply_diff_after_generation = false,
 			auto_approve_tool_permissions = false,
+      enable_fastapply = false,
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
