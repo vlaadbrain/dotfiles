@@ -33,6 +33,9 @@ alias ecrLogin='eval $(aws ecr get-login --no-include-email --region us-east-1)'
 alias cleanDockerImages='docker rmi $(docker images -q --filter dangling=true)'
 alias ssh-add='SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ssh-add'
 alias 1pass='eval $(op signin)'
+alias wificli='impala'
+alias bluecli='bluetui'
+alias soundcli='wiremix'
 
 export NVM_DIR="$HOME/.config/nvm"
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then

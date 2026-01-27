@@ -9,6 +9,9 @@ _add_to_path_uniq() {
 
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
   _add_to_path_uniq "$HOME/bin"
+
+  export JAVA_HOME="/usr/lib/jvm/default-runtime"
+
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if [[ -d "$HOME/src/flutter" ]]; then
       export CHROME_EXECUTABLE=/usr/bin/chromium
@@ -16,6 +19,7 @@ if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
     fi
     if [[ -d "$HOME/src/android-studio" ]]; then
       _add_to_path_uniq "$HOME/src/android-studio/bin"
+      export JAVA_HOME="/home/cjt/src/android-studio/jbr"
     fi
     if [[ -d "$HOME/Android/Sdk" ]]; then
       # https://developer.android.com/tools/variables#set
@@ -39,7 +43,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
   # If you need to have openjdk@21 first in your PATH, run:
   export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
-  _add_to_path_uniq "${JAVA_HOME}/bin"
   # For compilers to find openjdk@21 you may need to set:
   export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
   # _add_to_path_uniq "/usr/local/opt/redis@4.0/bin"
@@ -53,6 +56,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     _add_to_path_uniq "$ANDROID_HOME/emulator"
     _add_to_path_uniq "$ANDROID_HOME/platform-tools"
   fi
+fi
+
+if [[ -d "$HOME/.local/bin" ]]; then
+  _add_to_path_uniq "$HOME/.local/bin"
+fi
+
+if [[ -v JAVA_HOME ]]; then
+  _add_to_path_uniq "${JAVA_HOME}/bin"
 fi
 
 export XDG_CONFIG_HOME="${HOME}/.config"
