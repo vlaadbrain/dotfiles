@@ -29,8 +29,8 @@ XSIDLEPID=$!
 
 nice mpd &
 
-exec ${HOME}/bin/dwmstatus &
-DWMSTATUSPID=$!
+exec ${HOME}/bin/slstatus &
+SLSTATUSPID=$!
 
 # ${HOME}/bin/wmname LG3D &
 eval `ssh-agent`
@@ -42,5 +42,5 @@ wait $DWMPID
 setxkbmap -option
 ssh-agent -k
 
-kill $DWMSTATUSPID
+kill $SLSTATUSPID
 kill $XSIDLEPID

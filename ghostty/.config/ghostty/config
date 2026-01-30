@@ -6,15 +6,17 @@ theme = "Solarized Dark - Cool"
 
 font-family = "Hack Nerd Font Mono"
 font-style = "Regular"
-font-size = "13"
+font-size = "9"
 font-thicken
 
 window-padding-x = 2,2
 window-padding-y = 2,2
 window-padding-color = background
+window-decoration = none
 
 copy-on-select = true
 
 shell-integration = zsh
 
 # macos-titlebar-style = hidden
+gtk-titlebar = false

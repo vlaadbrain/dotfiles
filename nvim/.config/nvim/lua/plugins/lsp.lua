@@ -102,7 +102,12 @@ return {
 				},
 			}
 
-			servers.kotlin_language_server = {}
+			servers.kotlin_lsp = {
+        filetypes = { "kotlin" },
+        cmd = { "kotlin-lsp", "--stdio" },
+        root_markers = { "settings.gradle", "settings.gradle.kts", "build.xml", "pom.xml", "build.gradle", "build.gradle.kts" },
+      }
+
 			servers.clangd = {
 				filetypes = { "c", "cpp", "hpp", "objc", "objcpp" },
 				on_attach = function(client, bufnr)

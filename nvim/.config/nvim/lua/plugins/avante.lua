@@ -5,7 +5,7 @@ return {
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
 		---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-		provider = "ollama", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
+		provider = "claude", -- The provider used in Aider mode or in the planning phase of Cursor Planning Mode
 		---@alias Mode "agentic" | "legacy"
 		mode = "agentic", -- The default mode for interaction. "agentic" uses tools to automatically generate code, "legacy" uses the old planning method to generate code.
 		-- WARNING: Since auto-suggestions are a high-frequency operation and therefore expensive,
@@ -16,10 +16,12 @@ return {
 			claude = {
 				endpoint = "https://api.anthropic.com",
 				-- model = "claude-3-5-sonnet-20241022",
-				model = "claude-sonnet-4-5-20250929",
+				-- model = "claude-sonnet-4-5-20250929",
+				model = "claude-opus-4-5",
+        timeout = 60000,
 				extra_request_body = {
 					temperature = 0.75,
-					max_tokens = 4096,
+					max_tokens = 20480,
 				},
 			},
       ollama = {

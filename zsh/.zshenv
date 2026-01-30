@@ -16,6 +16,10 @@ if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
     if [[ -d "$HOME/src/flutter" ]]; then
       export CHROME_EXECUTABLE=/usr/bin/chromium
       _add_to_path_uniq "$HOME/src/flutter/bin"
+      _add_to_path_uniq "$HOME/.pub-cache/bin"
+    fi
+    if [[ -d "/usr/lib/jvm/default-runtime" ]]; then
+      export JAVA_HOME="/usr/lib/jvm/default-runtime"
     fi
     if [[ -d "$HOME/src/android-studio" ]]; then
       _add_to_path_uniq "$HOME/src/android-studio/bin"
@@ -66,7 +70,19 @@ if [[ -v JAVA_HOME ]]; then
   _add_to_path_uniq "${JAVA_HOME}/bin"
 fi
 
+# if [[ -d "$HOME/src/swiftly" ]]; then
+#   export SWIFTLY_HOME_DIR="$HOME/src/swiftly"
+#   export SWIFTLY_BIN_DIR="$SWIFTLY_HOME_DIR/bin"
+#   export SWIFTLY_TOOLCHAINS_DIR="$SWIFTLY_HOME_DIR/toolchains"
+# 
+#   _add_to_path_uniq "$SWIFTLY_BIN_DIR"
+# fi
+
 export XDG_CONFIG_HOME="${HOME}/.config"
+if [[ -S "$XDG_RUNTIME_DIR/docker.sock" ]]; then
+  export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+fi
+
 export PATH
 export EDITOR=nvim
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
