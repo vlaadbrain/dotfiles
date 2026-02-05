@@ -43,7 +43,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     eval "$(brew shellenv)"
   fi
 
-  _add_to_path_uniq "$HOME/src/flutter/bin"
+  if [[ -d "$HOME/src/flutter" ]]; then
+    _add_to_path_uniq "$HOME/src/flutter/bin"
+    _add_to_path_uniq "$HOME/.pub-cache/bin"
+  fi
 
   # If you need to have openjdk@21 first in your PATH, run:
   export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
