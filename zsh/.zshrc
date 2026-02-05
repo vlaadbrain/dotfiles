@@ -141,9 +141,6 @@ alias cd="z"
 
 [[ -f $HOME/bin/op ]] &&  eval "$(op completion zsh)"; compdef _op op
 
-# Load Angular CLI autocompletion.
-[[ "$OSTYPE" == "darwin"* ]] && source <(ng completion script);
-
 # pnpm
 export PNPM_HOME="/home/cjt/.local/share/pnpm"
 case ":$PATH:" in
