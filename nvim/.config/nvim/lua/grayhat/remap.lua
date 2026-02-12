@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 
 local harpoon = require("harpoon")
 harpoon:setup()
+require("telescope").load_extension('find_template')
 local telescope = require("telescope.builtin")
 local tt = require("telescope.themes")
 local conform = require("conform")
