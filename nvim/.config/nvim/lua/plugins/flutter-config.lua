@@ -1,6 +1,6 @@
 return {
-  'akinsho/flutter-tools.nvim',
-  -- 'nvim-flutter/flutter-tools.nvim',
+  -- 'akinsho/flutter-tools.nvim',
+  'nvim-flutter/flutter-tools.nvim',
   lazy = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
@@ -8,17 +8,24 @@ return {
   },
   config = function()
     require('flutter-tools').setup {
+      root_patterns = { 'pubspec.yaml' },
+      widget_guides = {
+        enabled = false,
+      },
       decorations = {
         statusline = {
-          app_version = true,
-          device = true,
+          app_version = false,
+          device = false,
         },
       },
       dev_tools = {
-        autostart = true, -- autostart devtools server if not detected
-        auto_open_browser = true, -- Automatically opens devtools in the browser
+        autostart = false, -- autostart devtools server if not detected
+        auto_open_browser = false, -- Automatically opens devtools in the browser
+      },
+      dev_log = {
+        open_cmd = '10split',
         -- open_cmd = 'splitbelow ++bo',
-        open_cmd = 'vsplit',
+        focus_on_open = false,
       },
       lsp = {
         color = { -- show the derived colours for dart variables

@@ -1,10 +1,11 @@
 vim.g.mapleader = " "
 
-local harpoon = require("harpoon")
+local harpoon = require('harpoon')
 harpoon:setup()
-require("telescope").load_extension('find_template')
-local telescope = require("telescope.builtin")
-local tt = require("telescope.themes")
+require('telescope').load_extension('find_template')
+local flutter = require('telescope').load_extension('flutter')
+local telescope = require('telescope.builtin')
+local tt = require('telescope.themes')
 local conform = require("conform")
 
 vim.keymap.set({ "n", "v" }, "<leader>=", function()
@@ -32,6 +33,13 @@ vim.keymap.set("n", "<leader>ff", function() telescope.find_files(tt.get_ivy({})
 vim.keymap.set("n", "<leader>fg", function() telescope.live_grep(tt.get_ivy({})) end, { desc = "Telescope Find Grep" })
 vim.keymap.set("n", "<leader>fh", function() telescope.help_tags() end, { desc = "Telescope Search help" })
 
+vim.keymap.set("n", "<leader>ft", function() flutter.commands() end, { desc = "Telescope Flutter Commands" })
+vim.keymap.set("n", "<leader>fs", ":FlutterRun <CR>", { desc = "Flutter Run" })
+vim.keymap.set("n", "<leader>fq", ":FlutterQuit <CR>", { desc = "Flutter Quit" })
+vim.keymap.set("n", "<leader>fr", ":FlutterRestart <CR>", { desc = "Flutter Restart" })
+vim.keymap.set("n", "<leader>fl", ":FlutterLogToggle <CR>", { desc = "Flutter Toggle Log" })
+vim.keymap.set("n", "<leader>fb", ":FlutterToggleBrightness <CR>", { desc = "Flutter Toggle Brightness" })
+
 vim.keymap.set("n", "<leader>vk", function() telescope.keymaps() end, { desc = "NVIM keymaps" })
 vim.keymap.set("n", "<leader>vc", function() telescope.find_files({ cwd = "~/.config/nvim/" }) end, { desc = "NVIM config" })
 
@@ -48,9 +56,3 @@ vim.keymap.set("n", "<C-4>", function() harpoon:list():select(4) end, { desc = "
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy window" })
 vim.keymap.set("n", "<leader>ls", "<cmd>Lazy sync<cr>", { desc = "Lazy sync" })
 vim.keymap.set("n", "<leader>lu", "<cmd>Lazy update<cr>", { desc = "Lazy update" })
-
-vim.keymap.set("n", "<leader>FS", ":FlutterRun <CR>", { desc = "Flutter Run" })
-vim.keymap.set("n", "<leader>FQ", ":FlutterQuit <CR>", { desc = "Flutter Quit" })
-vim.keymap.set("n", "<leader>FR", ":FlutterRestart <CR>", { desc = "Flutter Restart" })
-vim.keymap.set("n", "<leader>LR", ":FlutterLspRestart <CR>", { desc = "Flutter LspRestart" })
-vim.keymap.set("n", "<leader>FL", ":FlutterDevTools <CR>", { desc = "Flutter Log" })
