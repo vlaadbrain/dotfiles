@@ -86,6 +86,7 @@ if [[ -S "$XDG_RUNTIME_DIR/docker.sock" ]]; then
   export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 fi
 
+export LESSUTFCHARDEF='e000-f8ff:p,f0001-fffff:p'
 export PATH
 export EDITOR=nvim
 export MANPAGER="sh -c 'awk '\''{ gsub(/\x1B\[[0-9;]*m/, \"\", \$0); gsub(/.\x08/, \"\", \$0); print }'\'' | bat -p -lman'"
