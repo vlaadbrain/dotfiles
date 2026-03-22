@@ -16,3 +16,4 @@ stow -R -t ~ mpd
 stow -R -t ~ ncmpc
 stow -R -t ~ impala
 stow -R -t ~ screen
+stow -R -t ~ claude
