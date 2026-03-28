@@ -1,11 +1,12 @@
-sudo pacman -S terminus-font
+sudo pacman -Sy terminus-font
 // setfont ter-122b // echo "FONT=ter-122b" >> /etc/vconsole.conf
-sudo pacman -S linux-headers
-sudo pacman -S xorg-server xorg-apps nerd-fonts xterm zsh git make gcc openssh stow xclip sddm xorg wget
-sudo pacman -S neovim bat go git-delta
-sudo pacman -S bluez bluez-utils bluetui
-sudo pacman -S mpd ncmpc wiremix
-sudo pacman -S luarocks
+sudo pacman -Sy linux-headers
+sudo pacman -Sy xorg-server xorg-apps nerd-fonts xterm zsh git make gcc openssh stow xclip sddm xorg wget brightnessctl
+sudo pacman -Sy neovim bat go git-delta
+sudo pacman -Sy bluez bluez-utils bluetui
+sudo pacman -Sy mpd mpc ncmpc wiremix
+sudo pacman -Sy luarocks
+sudo pacman -Sy btop mupdf
 
 git clone https://aur.archlinux.org/yay.git
 makepkg -si
@@ -15,7 +16,9 @@ git clone https://aur.archlinux.org/1password.git
 makepkg -si 
 
 yay xinit-xsession clangd-bin zen-browser
-yay evdi-dkms displaylink thinkpad-scripts
+yay evdi-dkms-git displaylink
+
+sudo pacman -Sy signal-desktop
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 nvm install node
