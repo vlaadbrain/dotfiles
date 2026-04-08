@@ -63,6 +63,11 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     _add_to_path_uniq "$ANDROID_HOME/emulator"
     _add_to_path_uniq "$ANDROID_HOME/platform-tools"
   fi
+
+  # Shorebird bin
+  if [[ -d "$HOME/src/shorebird/bin" ]]; then
+    _add_to_path_uniq "$HOME/src/shorebird/bin"
+  fi
 fi
 
 if [[ -d "$HOME/.local/bin" ]]; then
