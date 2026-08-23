@@ -2,7 +2,7 @@
   "env": {
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
   },
-  "model": "opus[1m]",
+  "model": "claude-opus-4-6",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -13,5 +13,6 @@
     "kotlin-lsp@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true
   },
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "editorMode": "vim"
 }
