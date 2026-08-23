@@ -1,0 +1,9 @@
+config:
+  fallback-icon: "󱈸󱈸"
+  multi-pane-icon: "" # show when window has multiple panes (blank by default)
+  show-name: false
+  always-show-fallback-name: "true"
+  icon-position: "left"
+icons:
+  pi: ""
+  dartvm: " "

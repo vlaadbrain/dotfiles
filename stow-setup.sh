@@ -1,7 +1,6 @@
 #!/bin/sh
 
 stow -R -t ~ git
-stow -R -t ~ 1Password
 stow -R -t ~ ghostty
 stow -R -t ~ iterm2
 stow -R -t ~ alacritty
