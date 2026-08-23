@@ -35,6 +35,14 @@ if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
       _add_to_path_uniq "$ANDROID_HOME/emulator"
       _add_to_path_uniq "$ANDROID_HOME/platform-tools"
     fi
+    if [[ -d "$HOME/src/zig" ]]; then
+      export ZIG_PREFIX=$HOME/src/zig
+      _add_to_path_uniq "$ZIG_PREFIX/bin"
+    fi
+
+    if [[ -d "$HOME/src/odin" ]]; then
+      _add_to_path_uniq "$HOME/src/odin"
+    fi
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   if [[ -d "/opt/homebrew/bin" ]]; then

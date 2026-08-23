@@ -1,0 +1,27 @@
+{
+  "providers": {
+    "local-ollama": {
+      "api": "openai-completions",
+      "baseUrl": "http://localhost:11434/v1",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "qwen2.5-coder:7b",
+          "contextWindow": 32768
+        },
+        {
+          "id": "qwen3.5:4b",
+          "contextWindow": 32768
+        },
+        {
+          "id": "ornith:9b",
+          "contextWindow": 32768
+        },
+        {
+          "id": "openbmb/minicpm:q8_0",
+          "contextWindow": 32768
+        }
+      ]
+    }
+  }
+}

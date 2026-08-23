@@ -1,0 +1,10 @@
+{
+  "theme": "tokyo-night",
+  "lastChangelogVersion": "0.80.3",
+  "defaultProvider": "local-ollama",
+  "defaultModel": "openbmb/minicpm:q8_0",
+  "packages": [
+    "npm:pi-json-tools",
+    "npm:@spences10/pi-themes"
+  ]
+}

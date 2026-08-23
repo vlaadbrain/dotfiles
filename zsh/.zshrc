@@ -37,6 +37,13 @@ alias wificli='impala'
 alias bluecli='bluetui'
 alias soundcli='wiremix'
 
+colors () {
+    for i in {0..255}
+    do
+        print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}
+    done
+}
+
 export NVM_DIR="$HOME/.config/nvm"
 if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
   alias cat=bat
