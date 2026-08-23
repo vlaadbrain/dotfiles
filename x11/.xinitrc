@@ -2,7 +2,7 @@
 # dwm startup-script:
 # Enable second monitor
 
-xrandr --output HDMI-0 --right-of DP-1 --noprimary --auto
+# xrandr --output HDMI-0 --right-of DP-1 --noprimary --auto
 
 #
 # Apply my fonts
@@ -10,7 +10,9 @@ xrandr --output HDMI-0 --right-of DP-1 --noprimary --auto
 # xset fp rehash
 # source my Xresources
 xrdb -load ~/.Xdefaults
-# setxkbmap -option ctrl:swapcaps
+KEYBOARD_ID=`xinput -list --id-only "AT Translated Set 2 keyboard"`
+setxkbmap -device ${KEYBOARD_ID} -option ctrl:swapcaps
+setxkbmap -device ${KEYBOARD_ID} -option altwin:swap_lalt_lwin
 
 PATH=${PATH}:/home/cjt/bin
 
