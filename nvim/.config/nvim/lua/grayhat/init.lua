@@ -23,3 +23,13 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end,
 })
+
+-- This enables native document color support for all compatible LSPs (including Dart)
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.server_capabilities.colorProvider then
+      vim.lsp.document_color.enable(true, { bufnr = args.buf })
+    end
+  end,
+})

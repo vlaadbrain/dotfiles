@@ -8,6 +8,8 @@ local telescope = require('telescope.builtin')
 local tt = require('telescope.themes')
 local conform = require("conform")
 
+vim.keymap.set("n","<leader>/","<cmd>AerialToggle!<CR>")
+
 vim.keymap.set({ "n", "v" }, "<leader>=", function()
 	conform.format({ lsp_fallback = true, async = false, timeout_ms = 1000 })
 end, { desc = "Format file or range (in visual mode)" })
@@ -34,11 +36,11 @@ vim.keymap.set("n", "<leader>fg", function() telescope.live_grep(tt.get_ivy({}))
 vim.keymap.set("n", "<leader>fh", function() telescope.help_tags() end, { desc = "Telescope Search help" })
 
 vim.keymap.set("n", "<leader>ft", function() flutter.commands() end, { desc = "Telescope Flutter Commands" })
-vim.keymap.set("n", "<leader>fs", ":FlutterRun <CR>", { desc = "Flutter Run" })
-vim.keymap.set("n", "<leader>fq", ":FlutterQuit <CR>", { desc = "Flutter Quit" })
-vim.keymap.set("n", "<leader>fr", ":FlutterRestart <CR>", { desc = "Flutter Restart" })
-vim.keymap.set("n", "<leader>fl", ":FlutterLogToggle <CR>", { desc = "Flutter Toggle Log" })
-vim.keymap.set("n", "<leader>fb", ":FlutterToggleBrightness <CR>", { desc = "Flutter Toggle Brightness" })
+-- vim.keymap.set("n", "<leader>fs", ":FlutterRun <CR>", { desc = "Flutter Run" })
+-- vim.keymap.set("n", "<leader>fq", ":FlutterQuit <CR>", { desc = "Flutter Quit" })
+-- vim.keymap.set("n", "<leader>fr", ":FlutterRestart <CR>", { desc = "Flutter Restart" })
+-- vim.keymap.set("n", "<leader>fl", ":FlutterLogToggle <CR>", { desc = "Flutter Toggle Log" })
+-- vim.keymap.set("n", "<leader>fb", ":FlutterToggleBrightness <CR>", { desc = "Flutter Toggle Brightness" })
 
 vim.keymap.set("n", "<leader>vk", function() telescope.keymaps() end, { desc = "NVIM keymaps" })
 vim.keymap.set("n", "<leader>vc", function() telescope.find_files({ cwd = "~/.config/nvim/" }) end, { desc = "NVIM config" })
@@ -56,3 +58,6 @@ vim.keymap.set("n", "<C-4>", function() harpoon:list():select(4) end, { desc = "
 vim.keymap.set("n", "<leader>l", "<cmd>Lazy<cr>", { desc = "Lazy window" })
 vim.keymap.set("n", "<leader>ls", "<cmd>Lazy sync<cr>", { desc = "Lazy sync" })
 vim.keymap.set("n", "<leader>lu", "<cmd>Lazy update<cr>", { desc = "Lazy update" })
+
+vim.keymap.set("n", "<F2>", ":make<cr>", { desc = "make project" })
+vim.keymap.set("n", "<F3>", ":make run<cr>", { desc = "make and run project" })
