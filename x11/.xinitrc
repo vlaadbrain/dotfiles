@@ -20,7 +20,7 @@ exec ${HOME}/bin/startdwm &
 DWMPID=$!
 
 xsetroot -solid darkslategray &
-xset s 3300
+xset s 3600
 xset +dpms
 xset dpms 3600 3900 4200
 # Turn off beeps:
