@@ -21,13 +21,27 @@ switch_to_displaylink() {
 
   echo "switch to $DL_RIGHT $DIRECTION $DL_LEFT"
 
+  xrandr $INTERN_PART
+  sleep 1
+  xrandr $DL_LEFT_PART $DL_RIGHT_PART
 
-  xrandr $INTERN_PART $DL_LEFT_PART $DL_RIGHT_PART
+# clear keymaps
+  setxkbmap -option
+  setxkbmap -option
 }
 
 switch_to_laptop() {
   echo "switch to laptop $INTERN"
-  xrandr --output "$DL_LEFT" --off --output "$DL_RIGHT" --off --output "$INTERN" --auto --primary
+  xrandr --output "$DL_LEFT" --off
+  sleep 1
+  xrandr --output "$DL_RIGHT" --off
+  sleep 1
+  xrandr --output "$INTERN" --auto --primary
+
+# set the laptop keys
+  KEYBOARD_ID=`xinput -list --id-only "AT Translated Set 2 keyboard"`
+  setxkbmap -device ${KEYBOARD_ID} -option ctrl:swapcaps
+  setxkbmap -device ${KEYBOARD_ID} -option altwin:swap_lalt_lwin
 }
 
 # if laptop screen is primary, switch to dock screens
