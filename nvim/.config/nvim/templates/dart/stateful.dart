@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class {{_camel_file_}} extends StatefulWidget {
   const {{_camel_file_}}({super.key});
