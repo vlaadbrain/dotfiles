@@ -15,6 +15,7 @@ if [[ "$OSTYPE" == "freebsd"* || "$OSTYPE" == "linux-gnu"* ]]; then
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     if [[ -d "$HOME/src/flutter" ]]; then
       export CHROME_EXECUTABLE=/usr/bin/chromium
+      export ONESIGNAL_DISABLE_LOCATION=true
       _add_to_path_uniq "$HOME/src/flutter/bin"
       _add_to_path_uniq "$HOME/.pub-cache/bin"
     fi
@@ -47,6 +48,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   fi
 
   if [[ -d "$HOME/src/flutter" ]]; then
+    export ONESIGNAL_DISABLE_LOCATION=true
     _add_to_path_uniq "$HOME/src/flutter/bin"
     _add_to_path_uniq "$HOME/.pub-cache/bin"
   fi
