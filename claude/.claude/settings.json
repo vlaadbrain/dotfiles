@@ -2,7 +2,7 @@
   "env": {
     "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
   },
-  "model": "claude-opus-4-6",
+  "model": "opus",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -14,5 +14,11 @@
     "skill-creator@claude-plugins-official": true
   },
   "effortLevel": "high",
-  "editorMode": "vim"
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "editorMode": "vim",
+  "hooks": {"SessionStart":[{"matcher":"^(startup|resume|clear|compact|fork)$","hooks":[{"type":"command","command":"bash '/home/cjt/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
 }
