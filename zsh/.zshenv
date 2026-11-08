@@ -102,6 +102,7 @@ if [[ -S "$XDG_RUNTIME_DIR/docker.sock" ]]; then
   export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 fi
 
+export MPD_HOST="/home/cjt/tmp/mpd_socket"
 export LESSUTFCHARDEF='e000-f8ff:p,f0001-fffff:p'
 export PATH
 export EDITOR=nvim
