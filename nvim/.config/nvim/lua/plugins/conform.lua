@@ -8,8 +8,14 @@ return {
 			dart = { "dart_format" },
 			cpp = { "clang_format" },
 			c = { "clang_format" },
+			odin = { "odinfmt" },
 		},
 		formatters = {
+			odinfmt = {
+				command = "odinfmt",
+				args = { "-stdin" },
+				stdin = true,
+			},
 			dart_format = {
 				command = "dart",
 				args = { "format", "$FILENAME" },

@@ -6,6 +6,19 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
-      pipe_table = { enabled = false },
+      file_types = { 'markdown' },
+      pipe_table = {
+        enabled = true,
+        preset = 'round',
+        wrap = true,
+        style = 'full',
+        border = {
+            '┌', '┬', '┐',
+            '├', '┼', '┤',
+            '└', '┴', '┘',
+            '│', '─',
+        },
+      },
+      completions = { lsp = { enabled = true }},
     },
 }
