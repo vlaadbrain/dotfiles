@@ -26,6 +26,12 @@ xset dpms 3600 3900 4200
 # Turn off beeps:
 xset -b &
 
+autocutsel &
+AUTOCUTSELPID=$!
+
+autocutsel -selection PRIMARY &
+AUTOCUTSEL2PID=$!
+
 exec ${HOME}/bin/xsidle.sh slock &
 XSIDLEPID=$!
 
@@ -46,3 +52,4 @@ ssh-agent -k
 
 kill $SLSTATUSPID
 kill $XSIDLEPID
+kill $AUTOCUTSELPID $AUTOCUTSEL2PID
